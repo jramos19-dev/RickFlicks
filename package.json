@@ -1,7 +1,7 @@
 {
-  "name": "vue3template",
+  "name": "mortyMovies",
   "version": "1.0.0",
-  "author": "Rodolfo Romamn <rromanv@gmail.com>",
+  "author": "Jorge Ramos <jramos19@southtexascollege.edu>",
   "license": "ISC",
   "scripts": {
     "dev": "vite",
