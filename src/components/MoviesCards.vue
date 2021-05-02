@@ -5,10 +5,10 @@
 </template>
 
 <script setup>
-  import { onMounted } from 'vue'
-  import { getMovies, movies, page } from '~/helpers/useMovies'
+import { onMounted } from "vue"
+import { getMovies, movies, page } from "~/helpers/useMovies"
 
-  onMounted(() => {
-    getMovies()
-  })
+onMounted(() => {
+  getMovies()
+})
 </script>

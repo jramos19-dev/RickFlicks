@@ -10,7 +10,7 @@
     </button>
     <div class="inline-block px-4 py-2 mt-8">
       <h1
-        class="text-4xl font-bold tracking-wider uppercase text-coolGray-100 filter drop-shadow-2xl"
+        class="text-4xl font-bold tracking-wider uppercase text-blue-300 filter drop-shadow-2xl"
       >
         {{ movie.title }}
       </h1>
@@ -21,7 +21,7 @@
       <div
         v-for="({ text, userName }, index) in comments"
         :key="index"
-        class="w-1/2 px-4 py-2 text-left rounded bg-coolGray-100"
+        class="w-1/2 px-4 py-2 text-left rounded bg-cyan-200"
       >
         {{ text }}
         <p class="mt-4 ml-auto text-sm text-right">{{ userName }}</p>
@@ -40,29 +40,29 @@
 </template>
 
 <script setup>
-  import { defineEmit, defineProps, ref } from 'vue'
-  import { bgBaseURL } from '~/helpers/useMovies'
-  import { database } from '~/helpers/useFirebase'
+import { defineEmit, defineProps, ref } from "vue"
+import { bgBaseURL } from "~/helpers/useMovies"
+import { database } from "~/helpers/useFirebase"
 
-  const newComment = ref('')
-  const emit = defineEmit(['close'])
+const newComment = ref("")
+const emit = defineEmit(["close"])
 
-  const props = defineProps({
-    movie: {
-      type: Object,
-      default: () => {
-        return {
-          title: '',
-          backdrop_path: '',
-        }
-      },
+const props = defineProps({
+  movie: {
+    type: Object,
+    default: () => {
+      return {
+        title: "",
+        backdrop_path: "",
+      }
     },
-  })
+  },
+})
 
-  const { comments, addComment } = database(props.movie.id)
+const { comments, addComment } = database(props.movie.id)
 
-  const add = () => {
-    addComment(newComment.value)
-    newComment.value = ''
-  }
+const add = () => {
+  addComment(newComment.value)
+  newComment.value = ""
+}
 </script>
