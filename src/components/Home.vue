@@ -1,1 +1,4 @@
-<template>Home</template>
+<template>
+  <MoviesCards />
+  <Pagination />
+</template>

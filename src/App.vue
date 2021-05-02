@@ -6,6 +6,7 @@
 </template>
 
 <script setup>
-import { authentication } from "~/helpers/useFirebase"
-const { isAuthenticated } = authentication()
+  import { authentication } from '~/helpers/useFirebase'
+
+  const { isAuthenticated } = authentication()
 </script>

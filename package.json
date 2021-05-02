@@ -1,7 +1,7 @@
 {
-  "name": "mortyMovies",
+  "name": "rickFlicks",
   "version": "1.0.0",
-  "author": "Jorge Ramos <jramos19@southtexascollege.edu>",
+  "author": "Jorge Ramos <jramos19@southtexascollege.edu",
   "license": "ISC",
   "scripts": {
     "dev": "vite",
@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^4.8.4",
-    "@vueuse/firebase": "^4.9.1",
-    "firebase": "^8.4.3",
+    "@vueuse/firebase": "^4.9.0",
+    "axios": "^0.21.1",
+    "firebase": "^8.4.1",
     "vue": "^3.0.5"
   },
   "devDependencies": {
