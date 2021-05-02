@@ -1,7 +1,7 @@
 <template>
   <nav class="bg-cyan-200">
-    <div class="containter flex items-center justify-between mx-auto">
-      <div class="flex items-center space-x-4">
+    <div class="container flex items-center justify-between mx-auto">
+      <div class="flex items-center">
         <noto:videocassette class="h-16 w-16" />
         <p
           class="text-4xl tracking-wider text-transparent font-extralight bg-clip-text bg-violet-900"
@@ -11,7 +11,7 @@
       </div>
       <div>
         <div v-if="isAuthenticated" class="flex items-center space-x-4">
-          <p class="text-blue-700">Welcome {{ user }}</p>
+          <p class="text-blue-700">Welcome {{ user?.displayName }}</p>
           <button
             @click="signOut"
             class="px-8 py-2 font font-semibold bg-red-600 rounded-full focus:ring-4 focus :outline-none text-blue-800 hover:bg-red-800"
@@ -33,18 +33,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { authentication } from "~/helpers/useFirebase"
 
-const isAuthenticated = ref(false)
-const user = ref("")
-
-const signIn = () => {
-  isAuthenticated.value = true
-  user.value = "Jorge"
-}
-
-const signOut = () => {
-  isAuthenticated.value = false
-  user.value = ""
-}
+const { signIn, signOut, isAuthenticated, user } = authentication()
 </script>

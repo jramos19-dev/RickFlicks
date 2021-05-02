@@ -1,7 +1,11 @@
 <template>
   <NavBar />
-  <Home />
+  <Home v-if="isAuthenticated" />
+  <EmptyHome v-else />
   <Footer />
 </template>
 
-<script setup></script>
+<script setup>
+import { authentication } from "~/helpers/useFirebase"
+const { isAuthenticated } = authentication()
+</script>
