@@ -34,12 +34,12 @@
 </template>
 
 <script setup>
-import { defineProps, ref, onMounted, toRefs, watch } from "vue"
-import { useToggle } from "@vueuse/core"
+import { defineProps, ref, onMounted, toRefs, watch } from 'vue'
+import { useToggle } from '@vueuse/core'
 
-import { posterBaseURL } from "~/helpers/useMovies"
-import { countByObjectId, add } from "~/helpers/useLikes"
-import { authentication } from "~/helpers/useFirebase"
+import { posterBaseURL } from '~/helpers/useMovies'
+import { countByObjectId, add } from '~/helpers/useLikes'
+import { authentication } from '~/helpers/useFirebase'
 
 const [value, toggle] = useToggle(false)
 
@@ -50,10 +50,10 @@ const props = defineProps({
     type: Object,
     default: () => {
       return {
-        title: "",
-        overview: "",
-        poster_path: "",
-        id: "",
+        title: '',
+        overview: '',
+        poster_path: '',
+        id: '',
       }
     },
   },
