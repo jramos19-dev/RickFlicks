@@ -1,17 +1,13 @@
 import axios from 'axios'
 
-const likes = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  params: {
-    username: import.meta.env.VITE_API_USERNAME,
-    password: import.meta.env.VITE_API_PASSWORD,
-  },
-})
+const apiUrl = import.meta.env.VITE_API_URL || '/api'
 
 export const add = async (like) => {
-  await likes.post('/likes', { like })
+  await axios.post(`${apiUrl}/likes`, { like })
 }
 
 export const countByObjectId = async (objectId) => {
-  return await likes.get(`likes/count/object/${objectId}`)
+  return await axios.get(`${apiUrl}/count`, {
+    params: { objectId }
+  })
 }
