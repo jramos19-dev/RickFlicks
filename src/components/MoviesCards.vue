@@ -6,6 +6,7 @@
 
 <script setup>
 import { onMounted } from "vue"
+import Card from "~/components/Card.vue"
 import { getMovies, movies, page } from "~/helpers/useMovies"
 
 onMounted(() => {

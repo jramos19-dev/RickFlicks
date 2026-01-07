@@ -6,7 +6,9 @@
     `"
   >
     <button @click="emit('close')" class="absolute text-red-300 left-3 top-3">
-      <mdi:close-box class="w-12 h-12 filter drop-shadow-2xl" />
+      <svg class="w-12 h-12 filter drop-shadow-2xl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+      </svg>
     </button>
     <div class="inline-block px-4 py-2 mt-8">
       <h1
@@ -40,12 +42,12 @@
 </template>
 
 <script setup>
-import { defineEmit, defineProps, ref } from "vue"
+import { defineEmits, defineProps, ref } from "vue"
 import { bgBaseURL } from "~/helpers/useMovies"
 import { database } from "~/helpers/useFirebase"
 
 const newComment = ref("")
-const emit = defineEmit(["close"])
+const emit = defineEmits(["close"])
 
 const props = defineProps({
   movie: {

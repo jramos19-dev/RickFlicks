@@ -6,7 +6,9 @@ import 'firebase/firestore'
 
 import { firebaseConfig } from '~/config/firebase'
 
-firebase.initializeApp(firebaseConfig)
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig)
+}
 
 const { auth, firestore } = firebase
 const { GoogleAuthProvider } = auth

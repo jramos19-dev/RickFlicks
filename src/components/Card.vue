@@ -18,13 +18,17 @@
       <div class="flex items-start justify-end">
         <div class="flex flex-col items-center">
           <button @click="newLike" class="text-coolGray-400 hover:text-red-600">
-            <mdi:heart class="w-8 h-8" />
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 21s-7-4.35-9.33-8.28C.54 9.07 2.24 5.5 5.88 4.6c1.86-.46 3.63.16 4.88 1.44 1.25-1.28 3.02-1.9 4.88-1.44 3.64.9 5.34 4.47 3.21 8.12C19 16.65 12 21 12 21z" />
+            </svg>
             <span>{{ likes }}</span>
           </button>
         </div>
         <div class="flex flex-col items-center">
           <button @click="toggle" class="text-coolGray-400 hover:text-blue-600">
-            <mdi:comment class="w-8 h-8" />
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+            </svg>
           </button>
         </div>
       </div>
@@ -37,6 +41,7 @@
 import { defineProps, ref, onMounted, toRefs, watch } from 'vue'
 import { useToggle } from '@vueuse/core'
 
+import Comments from '~/components/Comments.vue'
 import { posterBaseURL } from '~/helpers/useMovies'
 import { countByObjectId, add } from '~/helpers/useLikes'
 import { authentication } from '~/helpers/useFirebase'

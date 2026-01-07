@@ -16,7 +16,7 @@ const discover = axios.create({
 })
 
 export const getMovies = async () => {
-  const response = await discover('movie', { params: { page: page.value } })
+  const response = await discover('discover/movie', { params: { page: page.value } })
   movies.value = response.data.results
   pages.value = response.data.total_pages
 }
