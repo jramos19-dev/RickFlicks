@@ -16,7 +16,7 @@
       >
         {{ movie.title }}
       </h1>
-    </div>
+    </div>sss
     <div
       class="flex flex-col items-center py-2 space-y-4 overflow-y-scroll h-5/6"
     >
@@ -42,24 +42,23 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps, ref } from "vue"
+import { ref } from "vue"
 import { bgBaseURL } from "~/helpers/useMovies"
 import { database } from "~/helpers/useFirebase"
 
-const newComment = ref("")
 const emit = defineEmits(["close"])
 
 const props = defineProps({
   movie: {
     type: Object,
-    default: () => {
-      return {
-        title: "",
-        backdrop_path: "",
-      }
-    },
+    default: () => ({
+      title: "",
+      backdrop_path: "",
+    }),
   },
 })
+
+const newComment = ref("")
 
 const { comments, addComment } = database(props.movie.id)
 
